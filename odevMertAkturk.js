@@ -27,23 +27,23 @@ arr1.shift()
 console.log(arr1)
 
 // 5- arr1 ile arr2 arraylerini iki farklı yöntemle birleştiriniz
-const newArray = arr1.concat(arr2)
-const newArray2 = [...arr1, ...arr2]
+const newArr = arr1.concat(arr2)
+console.log(newArr)
 
-console.log(newArray)
-console.log(newArray2)
+const newArr2 = [...arr1, ...arr2]
+console.log(newArr2)
 
 // 6- kendisine gönderilen arrayde verilen elemanın olup olmadığını bulan array ve 
     // aranan eleman olmak üzere iki parametre alan ve geriye boolean değer döndüren bir fonksiyon yazınız
     // ve bu fonkisiyona arr2 ve 'h' parametresini verip çağırınız 
-function searhVal(arr,val) {
+function find(arr,val) {
     if(arr.includes(val)) {
         return true
     } else {
         return false
     }
 }
-console.log(searhVal(arr2,"h"))
+console.log(find(arr2,"h"))
 
 
 // 7- arr2 içindeki 'h' elemanın indexsini bulunuz
@@ -58,7 +58,7 @@ console.log(newArr)
 
 // 9- kendisine verilecek array elemanlarını döngü ile dönüp, array içindeki number
 // değerlerinin toplamını geriye dönen bir fonkiyon yazınız ve arr1 değeri ile çağırınız   
-function sumArr(arr) {
+function sum(arr) {
     arr.map((item) => {
         if((typeof item) === "string") {
            let index = arr.indexOf(item)
@@ -66,40 +66,39 @@ function sumArr(arr) {
         }
     })
     console.log(arr)
-
     return arr.reduce((a,b) => a + b, 0)
 
 }
 
-console.log(sumArr(arr1))
+console.log(sum(arr1))
 
 // 10- arr1 elemanlarını string değere çeviren bir map fonksiyonu yazınız    
-function stringfyArr(arr) {
+function string(arr) {
     arr.map(item => {
         let stringItem = item.toString()
         console.log(typeof stringItem)
     })
 }
-stringfyArr(arr1)
+string(arr1)
 
 
 // 11- arr3 içindeki id değeri 221 olan elemanı bulunuz
-let findIDVal = arr3.filter(x => x.id === 221)
-console.log(findIDVal)
+let findId = arr3.filter(x => x.id === 221)
+console.log(findId)
 
 // 12- arr3 içindeki user değerleri ali olan elemanları bulunuz
-let aliUsers = arr3.filter(x => x.name === 'ali')
-console.log(aliUsers)
+let getUser = arr3.filter(x => x.name === 'ali')
+console.log(getUser)
 
 // 13- arr3 içindeki elemanlarının id değerlerinin toplamlarını bulan bir reduce fonsiyonu yazınız
-function sumID(arr) {
-    let arrID = [];
+function sum(arr) {
+    let arr = [];
 
     for( let i = 0 ; i < arr.length ; i++) {
-        arrID.push(arr[i].id)
+        arr.push(arr[i].id)
     }
 
-   return arrID.reduce((a,b) => a + b,0)
+   return arr.reduce((a,b) => a + b,0)
 }
 
-console.log(sumID(arr3))
+console.log(sum(arr3))
